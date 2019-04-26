@@ -10,3 +10,13 @@ func Atoi(s string) int {
 
 	return i
 }
+
+// BaseConvert convert a number between arbitrary bases
+func BaseConvert(num string, base, toBase int) (string, error) {
+	i, err := strconv.ParseInt(num, base, 64)
+	if err != nil {
+		return "", err
+	}
+
+	return strconv.FormatInt(i, toBase), nil
+}
