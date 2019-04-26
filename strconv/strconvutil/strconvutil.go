@@ -20,3 +20,13 @@ func BaseConvert(num string, base, toBase int) (string, error) {
 
 	return strconv.FormatInt(i, toBase), nil
 }
+
+// Bindec convert a binary string to decimal
+func Bindec(bin string) (int, error) {
+	i, err := strconv.ParseInt(bin, 2, 64)
+	if err != nil {
+		return 0, err
+	}
+
+	return int(i), err
+}
