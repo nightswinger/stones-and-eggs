@@ -25,6 +25,14 @@ func (a *IntArray) Push(i int) {
 	a.array = append(a.array, i)
 }
 
+func (a *IntArray) Min() int {
+	return Min(a.array)
+}
+
+func (a *IntArray) Max() int {
+	return Max(a.array)
+}
+
 func (a *IntArray) String() string {
 	return fmt.Sprintf("%v", a.array)
 }
