@@ -33,6 +33,10 @@ func (a *IntArray) Max() int {
 	return Max(a.v)
 }
 
+func (a *IntArray) Iterator() *IntIterator {
+	return &IntIterator{data: a.v, current: -1}
+}
+
 func (a *IntArray) Val() []int {
 	return a.v
 }
