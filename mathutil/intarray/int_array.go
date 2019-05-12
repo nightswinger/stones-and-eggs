@@ -1,21 +1,30 @@
 package intarray
 
-import "math"
+import (
+	"fmt"
+)
 
-func Min(a []int) int {
-	r := float64(a[0])
-	for i := 0; i < len(a); i++ {
-		r = math.Min(r, float64(a[i]))
-	}
-
-	return int(r)
+type IntArray struct {
+	array []int
 }
 
-func Max(a []int) int {
-	r := float64(a[0])
-	for i := 0; i < len(a); i++ {
-		r = math.Max(r, float64(a[i]))
-	}
+func New(i []int) *IntArray {
+	a := IntArray{array: i}
+	return &a
+}
 
-	return int(r)
+func (a *IntArray) Get(index int) int {
+	return a.array[index]
+}
+
+func (a *IntArray) Set(index, value int) {
+	a.array[index] = value
+}
+
+func (a *IntArray) Push(i int) {
+	a.array = append(a.array, i)
+}
+
+func (a *IntArray) String() string {
+	return fmt.Sprintf("%v", a.array)
 }
