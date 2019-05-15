@@ -30,3 +30,13 @@ func Bindec(bin string) (int, error) {
 
 	return int(i), err
 }
+
+// Hexdec convert a hex string to decimal
+func Hexdec(hex string) (int, error) {
+	i, err := strconv.ParseInt(hex, 16, 64)
+	if err != nil {
+		return 0, err
+	}
+
+	return int(i), err
+}
